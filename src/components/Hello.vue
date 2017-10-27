@@ -23,6 +23,9 @@
 <script>
   import axios from 'axios'
   console.log(axios)
+  console.log(axios.defaults)
+  console.log(axios.interceptors)
+  console.log(axios.config)
 
   export default {
     name: 'hello',
@@ -35,7 +38,8 @@
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style scoped lang="scss" rel="stylesheet/scss" type="text/css">
+  @import '../assets/css/common.scss';
   h1, h2 {
     font-weight: normal;
   }
@@ -51,6 +55,6 @@
   }
 
   a {
-    color: #42b983;
+    color: $ nav-color;
   }
 </style>
