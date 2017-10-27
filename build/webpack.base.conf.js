@@ -30,7 +30,6 @@ module.exports = {
     new webpack.ProvidePlugin({
       axios: 'axios'
     })
-
   ],
   module: {
     rules: [
