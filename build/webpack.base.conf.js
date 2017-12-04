@@ -2,6 +2,7 @@ var path = require('path');
 var utils = require('./utils');
 var config = require('../config');
 var vueLoaderConfig = require('./vue-loader.conf');
+var OfflinePlugin = require('offline-plugin');
 var webpack=require('webpack');
 
 function resolve (dir) {
@@ -29,7 +30,8 @@ module.exports = {
   plugins:[
     new webpack.ProvidePlugin({
       axios: 'axios'
-    })
+    }),
+    new OfflinePlugin()
   ],
   module: {
     rules: [
