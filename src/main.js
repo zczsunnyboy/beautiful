@@ -3,8 +3,12 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import * as OfflinePluginRuntime from 'offline-plugin/runtime'
+import './fetch/velidate'
 
 Vue.config.productionTip = false
+
+OfflinePluginRuntime.install()
 
 /* eslint-disable no-new */
 new Vue({

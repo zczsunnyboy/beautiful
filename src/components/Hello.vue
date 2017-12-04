@@ -22,7 +22,6 @@
 
 <script>
   import axios from 'axios'
-  console.log(axios)
   console.log(axios.defaults)
   console.log(axios.interceptors)
   console.log(axios.config)
