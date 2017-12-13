@@ -15,7 +15,7 @@
   </div>
 </template>
 
-<script lang='babel'>
+<script>
   import { Validator } from 'vee-validate';
   import {mapState, mapActions} from 'vuex'
 
@@ -56,27 +56,25 @@
         'actionMessage',
         'actionError'
       ])
-  }
-  ,
-  created()
-  {
-    this.validator = new Validator();
+    },
+    created() {
+      this.validator = new Validator();
 
-    this.validator.attach({
-      name: this.Typename,
-      rules: this.rule,
-      alias: this.Alias
-    });
+      this.validator.attach({
+        name: this.Typename,
+        rules: this.rule,
+        alias: this.Alias
+      });
 
-    this.$set(this, 'errors', this.validator.errors);
+      this.$set(this, 'errors', this.validator.errors);
 
-    this.actionError({
-      [this.Typename]: this.validator
-    });
-    this.actionMessage({
-      [this.Typename]: this.content
-    })
-  }
+      this.actionError({
+        [this.Typename]: this.validator
+      });
+      this.actionMessage({
+        [this.Typename]: this.content
+      })
+    }
   }
 </script>
 

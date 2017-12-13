@@ -1,8 +1,8 @@
 export default {
-  async actionMessage ({ commit, state}, newobj) {
+  async actionMessage({commit, state}, newobj) {
     commit('increment', newobj)
   },
-  async actionError ({ commit, state }, newobj) {
+  async actionError({commit, state}, newobj) {
     commit('incrementerror', newobj)
   }
 }

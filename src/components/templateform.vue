@@ -7,7 +7,7 @@
   </div>
 </template>
 
-<script lang='babel'>
+<script>
   import {mapState, mapActions} from 'vuex'
 
   export default {
@@ -37,25 +37,19 @@
         'actionMessage',
         'actionError'
       ])
-  }
-  ,
-  computed:{
-    error()
-    {
-      return this.errors.has(this.type)
+    },
+    computed: {
+      error() {
+        return this.errors.has(this.type)
+      },
+      errormessage() {
+        return this.errors.first(this.type)
+      },
+      ...mapState([
+        'messageObj',
+        'errorObj'
+      ])
     }
-  ,
-    errormessage()
-    {
-      return this.errors.first(this.type)
-    }
-  ,
-  ...
-    mapState([
-      'messageObj',
-      'errorObj'
-    ])
-  }
   }
 </script>
 

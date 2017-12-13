@@ -39,7 +39,7 @@
         'messageObj',
         'errorObj'
       ])
-  }
+    }
   }
 </script>
 

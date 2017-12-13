@@ -12,7 +12,7 @@
   </div>
 </template>
 
-<script lang='babel'>
+<script>
   import jsform from '@/components/jsform'
   import {mapState, mapActions} from 'vuex'
   import _ from '@/fetch/jsform'
@@ -36,41 +36,31 @@
         'messageObj',
         'errorObj'
       ])
-  }
-  ,
-  methods: {
-    validateForm()
-    {
-      this.errorObj.forEach((obj, index) = > {
-        for(let key in obj
-    )
-      {
-        this.messageObj.forEach((e, i) = > {
-          for(let k in e
-      )
-        {
-          if (key == k) {
-            obj[key].validateAll({
-              [key]: e[k]
+    },
+    methods: {
+      validateForm() {
+        this.errorObj.forEach((obj, index) => {
+          for (let key in obj) {
+            this.messageObj.forEach((e, i) => {
+              for (let k in e) {
+                if (key == k) {
+                  obj[key].validateAll({
+                    [key]: e[k]
+                  })
+                }
+              }
             })
           }
-        }
-      })
+        })
+      },
+      clearErrors() {
+        this.errorObj.forEach((obj, index) => {
+          for (let key in obj) {
+            obj[key].errors.clear()
+          }
+        })
       }
-    })
     }
-  ,
-    clearErrors()
-    {
-      this.errorObj.forEach((obj, index) = > {
-        for(let key in obj
-    )
-      {
-        obj[key].errors.clear()
-      }
-    })
-    }
-  }
   }
 </script>
 
