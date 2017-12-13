@@ -2,7 +2,6 @@ var path = require('path');
 var utils = require('./utils');
 var config = require('../config');
 var vueLoaderConfig = require('./vue-loader.conf');
-var OfflinePlugin = require('offline-plugin');
 var webpack=require('webpack');
 
 function resolve (dir) {
@@ -24,26 +23,25 @@ module.exports = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('src'),
+      '@': resolve('src')
     }
   },
   plugins:[
     new webpack.ProvidePlugin({
       axios: 'axios'
-    }),
-    new OfflinePlugin()
+    })
   ],
   module: {
     rules: [
-      {
-        test: /\.(js|vue)$/,
-        loader: 'eslint-loader',
-        enforce: 'pre',
-        include: [resolve('src'), resolve('test')],
-        options: {
-          formatter: require('eslint-friendly-formatter')
-        }
-      },
+      //{
+      //  test: /\.(js|vue)$/,
+      //  loader: 'eslint-loader',
+      //  enforce: 'pre',
+      //  include: [resolve('src'), resolve('test')],
+      //  options: {
+      //    formatter: require('eslint-friendly-formatter')
+      //  }
+      //},
       {
         test: /\.vue$/,
         loader: 'vue-loader',

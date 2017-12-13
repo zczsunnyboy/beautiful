@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import * as OfflinePluginRuntime from 'offline-plugin/runtime'
 import './fetch/velidate'
+import store from './store/'
 
 Vue.config.productionTip = false
 
@@ -14,6 +15,7 @@ OfflinePluginRuntime.install()
 new Vue({
   el: '#app',
   router,
+  store,
   template: '<App/>',
   components: { App }
 })
